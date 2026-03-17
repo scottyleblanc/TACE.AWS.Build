@@ -1,7 +1,10 @@
 {
     "DefaultRegion": "ca-central-1",
     "DefaultProfile": "tace-aws-admin",
-    "RunModuleConfigPath": "..\\TACE.AWS.Run\\config\\tace-aws.config.json",
+    "Instances": {
+        "Linux":   "i-0e2007838d8464bff",
+        "Windows": "i-0ec184fd48720f2e3"
+    },
     "LaunchTemplates": {
         "tace-linux": {
             "TemplateId": "lt-PLACEHOLDER",

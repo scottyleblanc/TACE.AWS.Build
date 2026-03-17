@@ -33,6 +33,11 @@ Describe 'TACE.AWS.Build Module' {
             Get-Command -Module TACE.AWS.Build -Name Remove-TaceElasticIp |
                 Should -Not -BeNullOrEmpty
         }
+
+        It 'exports Get-TaceOrphanedElasticIps' {
+            Get-Command -Module TACE.AWS.Build -Name Get-TaceOrphanedElasticIps |
+                Should -Not -BeNullOrEmpty
+        }
     }
 
     Context 'Config is loaded' {

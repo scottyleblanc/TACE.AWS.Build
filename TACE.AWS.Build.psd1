@@ -17,6 +17,7 @@
         'New-TaceInstance'
         'Remove-TaceInstance'
         'Remove-TaceElasticIp'
+        'Get-TaceOrphanedElasticIps'
     )
 
     AliasesToExport   = @()

@@ -22,6 +22,16 @@ Active build checklist. Items migrate to CHANGELOG.md on completion.
 - [x] Activate TACE.AWS.Build import in PowerShell profile
 - [ ] Create GitHub repo scottyleblanc/TACE.AWS.Build and push initial commit
 
+## Scripts — Complete
+
+- [x] Scripts/Install-OracleXE.ps1 — install Oracle Database 26ai on a remote instance via SSM Run Command; idempotent re-run support; Verify step confirms DB is OPEN
+- [x] Scripts/Install-OracleXE.ps1 — move instance name→ID resolution into tace.aws.build.config.json
+- [x] Scripts/linux.post.build.ps1 — root volume resize (30GB) + filesystem extend + PowerShell install via SSM
+
+## Docs — In Progress
+
+- [x] Docs/TACE-AWS-INSTALL.md — Phase 5 references the old monolithic TACE.AWS module; update to reflect the Run/Build split (module paths, structure, config files, import commands)
+
 ## v0.2.0 — Planned
 
 - [ ] New-TaceLaunchTemplate — generate an AWS Launch Template from a local profile definition
