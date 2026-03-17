@@ -56,30 +56,30 @@ Describe 'Remove-TaceElasticIp' {
         }
 
         It 'returns Success=$true when confirmation matches' {
-            $result = Remove-TaceElasticIp -AllocationId 'eipalloc-0test12345' -PublicIp '1.2.3.4' -Confirm:$false
+            $result = Remove-TaceElasticIp -AllocationId 'eipalloc-0abc1234567890def' -PublicIp '1.2.3.4' -Confirm:$false
             $result.Success | Should -Be $true
         }
 
         It 'returns Success=$false when confirmation does not match' {
             Mock Read-Host { return '9.9.9.9' } -ModuleName TACE.AWS.Build
-            $result = Remove-TaceElasticIp -AllocationId 'eipalloc-0test12345' -PublicIp '1.2.3.4' -Confirm:$false
+            $result = Remove-TaceElasticIp -AllocationId 'eipalloc-0abc1234567890def' -PublicIp '1.2.3.4' -Confirm:$false
             $result.Success | Should -Be $false
         }
 
         It 'returns PSCustomObject with Success, Data, Message' {
-            $result = Remove-TaceElasticIp -AllocationId 'eipalloc-0test12345' -PublicIp '1.2.3.4' -Confirm:$false
+            $result = Remove-TaceElasticIp -AllocationId 'eipalloc-0abc1234567890def' -PublicIp '1.2.3.4' -Confirm:$false
             $result.PSObject.Properties.Name | Should -Contain 'Success'
             $result.PSObject.Properties.Name | Should -Contain 'Data'
             $result.PSObject.Properties.Name | Should -Contain 'Message'
         }
 
         It 'Message does not contain credential fragments' {
-            $result = Remove-TaceElasticIp -AllocationId 'eipalloc-0test12345' -PublicIp '1.2.3.4' -Confirm:$false
+            $result = Remove-TaceElasticIp -AllocationId 'eipalloc-0abc1234567890def' -PublicIp '1.2.3.4' -Confirm:$false
             $result.Message | Should -Not -Match 'password|secret|token|key'
         }
 
         It 'Data.WasAssociated is $false when EIP has no association' {
-            $result = Remove-TaceElasticIp -AllocationId 'eipalloc-0test12345' -PublicIp '1.2.3.4' -Confirm:$false
+            $result = Remove-TaceElasticIp -AllocationId 'eipalloc-0abc1234567890def' -PublicIp '1.2.3.4' -Confirm:$false
             $result.Data.WasAssociated | Should -Be $false
         }
     }
@@ -89,7 +89,7 @@ Describe 'Remove-TaceElasticIp' {
         It 'does not call AWS CLI when -WhatIf is specified' {
             Mock Assert-AwsCliAvailable { } -ModuleName TACE.AWS.Build
             Mock aws { throw 'AWS CLI should not be called under -WhatIf' }
-            { Remove-TaceElasticIp -AllocationId 'eipalloc-0test12345' -PublicIp '1.2.3.4' -WhatIf } |
+            { Remove-TaceElasticIp -AllocationId 'eipalloc-0abc1234567890def' -PublicIp '1.2.3.4' -WhatIf } |
                 Should -Not -Throw
             Should -Not -Invoke aws
         }
@@ -98,7 +98,7 @@ Describe 'Remove-TaceElasticIp' {
             Mock Assert-AwsCliAvailable { } -ModuleName TACE.AWS.Build
             Mock Read-Host { return '9.9.9.9' } -ModuleName TACE.AWS.Build
             Mock aws { throw 'AWS CLI should not be called after failed confirmation' }
-            { Remove-TaceElasticIp -AllocationId 'eipalloc-0test12345' -PublicIp '1.2.3.4' -Confirm:$false } |
+            { Remove-TaceElasticIp -AllocationId 'eipalloc-0abc1234567890def' -PublicIp '1.2.3.4' -Confirm:$false } |
                 Should -Not -Throw
             Should -Not -Invoke aws -ParameterFilter { $args -contains 'release-address' }
         }

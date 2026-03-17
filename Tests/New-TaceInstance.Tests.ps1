@@ -47,16 +47,12 @@ Describe 'New-TaceInstance' {
                 # Stub: describe-instances (list existing names)
                 if ($args -contains 'describe-instances') { return '[[]]' | ConvertFrom-Json | ConvertTo-Json }
                 # Stub: run-instances
-                if ($args -contains 'run-instances') { return '{"InstanceId":"i-0test1234567890a","State":"pending"}' }
-                # Stub: describe-instances (state poll)
-                if ($args -contains 'text' -and $args -contains 'describe-instances') { return 'running' }
-                # Stub: describe-instance-information (SSM)
-                if ($args -contains 'describe-instance-information') { return 'Online' }
+                if ($args -contains 'run-instances') { return '{"InstanceId":"i-0abc1234567890def","State":"pending"}' }
                 # Stub: allocate-address
-                if ($args -contains 'allocate-address') { return '{"PublicIp":"1.2.3.4","AllocationId":"eipalloc-0test1234"}' }
+                if ($args -contains 'allocate-address') { return '{"PublicIp":"1.2.3.4","AllocationId":"eipalloc-0abc1234567890def"}' }
                 # Stub: associate-address
                 if ($args -contains 'associate-address') { return '{}' }
-            }
+            } -ModuleName TACE.AWS.Build
             Mock Read-Host { return 'N' } -ModuleName TACE.AWS.Build
         }
 

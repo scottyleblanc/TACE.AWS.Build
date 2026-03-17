@@ -16,3 +16,5 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - Private helper `Get-TaceLaunchTemplate` — resolves profile name to AWS Launch Template ID with placeholder detection
 - Module config `tace.aws.build.config.json` — region, profile, Launch Template ID references (placeholder values — update before use)
 - Full Docs suite: README.md, TODO.md, CHANGELOG.md, SECURITY.md, PREREQUISITES.md, DESIGN.md
+- Pester tests: `New-TaceInstance.Tests.ps1`, `Remove-TaceInstance.Tests.ps1`, `Remove-TaceElasticIp.Tests.ps1`, `TACE.AWS.Build.Module.Tests.ps1` — 33 tests, 0 failures
+- `Tests/UnitTests.pester.ps1` — Pester configuration runner

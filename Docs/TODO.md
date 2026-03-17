@@ -14,12 +14,11 @@ Active build checklist. Items migrate to CHANGELOG.md on completion.
 - [x] Public: Remove-TaceInstance — terminate with -WhatIf + typed name confirmation
 - [x] Public: Remove-TaceElasticIp — disassociate + release with -WhatIf + typed IP confirmation
 - [x] Docs: README.md, TODO.md, CHANGELOG.md, SECURITY.md, PREREQUISITES.md, DESIGN.md
-- [ ] Create AWS Launch Templates in console for tace-linux and tace-windows profiles
-- [ ] Update config/tace.aws.build.config.json with real Launch Template IDs
-- [ ] Pester tests — New-TaceInstance
-- [ ] Pester tests — Remove-TaceInstance
-- [ ] Pester tests — Remove-TaceElasticIp
-- [ ] Pester tests — TACE.AWS.Build.Module (config loading)
+- [x] Pester tests — New-TaceInstance
+- [x] Pester tests — Remove-TaceInstance
+- [x] Pester tests — Remove-TaceElasticIp
+- [x] Pester tests — TACE.AWS.Build.Module (config loading)
+- [x] Tests/UnitTests.pester.ps1 runner (matches TACE.AWS.Run convention)
 - [ ] Activate TACE.AWS.Build import in PowerShell profile (currently commented out)
 - [ ] Create GitHub repo scottyleblanc/TACE.AWS.Build and push initial commit
 
