@@ -181,6 +181,7 @@ TACE.AWS.Build/
     Remove-TaceInstance.Tests.ps1
     Remove-TaceElasticIp.Tests.ps1
     TACE.AWS.Build.Module.Tests.ps1
+    UnitTests.pester.ps1
   Docs/
     README.md
     TODO.md
