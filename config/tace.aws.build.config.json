@@ -1,0 +1,21 @@
+{
+    "DefaultRegion": "ca-central-1",
+    "DefaultProfile": "tace-aws-admin",
+    "RunModuleConfigPath": "..\\TACE.AWS.Run\\config\\tace-aws.config.json",
+    "LaunchTemplates": {
+        "tace-linux": {
+            "TemplateId": "lt-PLACEHOLDER",
+            "TemplateName": "tace-linux",
+            "Description": "Oracle Linux 9, t3.medium — TACE standard Linux instance"
+        },
+        "tace-windows": {
+            "TemplateId": "lt-PLACEHOLDER",
+            "TemplateName": "tace-windows",
+            "Description": "Windows Server 2022, t3.medium — TACE standard Windows instance"
+        }
+    },
+    "NamingConvention": {
+        "Separator": "-",
+        "NumberFormat": "D2"
+    }
+}
