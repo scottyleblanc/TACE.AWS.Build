@@ -19,7 +19,7 @@ Active build checklist. Items migrate to CHANGELOG.md on completion.
 - [x] Pester tests — Remove-TaceElasticIp
 - [x] Pester tests — TACE.AWS.Build.Module (config loading)
 - [x] Tests/UnitTests.pester.ps1 runner (matches TACE.AWS.Run convention)
-- [ ] Activate TACE.AWS.Build import in PowerShell profile (currently commented out)
+- [x] Activate TACE.AWS.Build import in PowerShell profile
 - [ ] Create GitHub repo scottyleblanc/TACE.AWS.Build and push initial commit
 
 ## v0.2.0 — Planned
